@@ -1,0 +1,127 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\BRANCH.cs" />
+    <Compile Remove="Models\BUSINESSDEPARTMENT.cs" />
+    <Compile Remove="Models\BUSINESSLINE.cs" />
+    <Compile Remove="Models\BUSSTATION.cs" />
+    <Compile Remove="Models\BUSWAY.cs" />
+    <Compile Remove="Models\CALCULATEHISTORY.cs" />
+    <Compile Remove="Models\CANTEEN.cs" />
+    <Compile Remove="Models\CAR.cs" />
+    <Compile Remove="Models\CAREERPATH.cs" />
+    <Compile Remove="Models\CARREQUEST.cs" />
+    <Compile Remove="Models\CERTIFILE.cs" />
+    <Compile Remove="Models\CHATFRIEND.cs" />
+    <Compile Remove="Models\CHATMESSAGE.cs" />
+    <Compile Remove="Models\CHATROOM.cs" />
+    <Compile Remove="Models\CHATROOMMEMBER.cs" />
+    <Compile Remove="Models\CHATSTATUS.cs" />
+    <Compile Remove="Models\CHECKPOINTCLIENT.cs" />
+    <Compile Remove="Models\City.cs" />
+    <Compile Remove="Models\Client_Version_D.cs" />
+    <Compile Remove="Models\Client_Version_H.cs" />
+    <Compile Remove="Models\CLOSEDPERIOD.cs" />
+    <Compile Remove="Models\COMMENTDATION.cs" />
+    <Compile Remove="Models\COMPANY.cs" />
+    <Compile Remove="Models\COMPANYGROUP.cs" />
+    <Compile Remove="Models\CONFIGIMPORT.cs" />
+    <Compile Remove="Models\CONFIGTIMER.cs" />
+    <Compile Remove="Models\CONTRACTHISTORY.cs" />
+    <Compile Remove="Models\CONTROLLABEL.cs" />
+    <Compile Remove="Models\CORRUPTION.cs" />
+    <Compile Remove="Models\COST.cs" />
+    <Compile Remove="Models\COSTCENTER.cs" />
+    <Compile Remove="Models\COSTPATH.cs" />
+    <Compile Remove="Models\COUNTRY.cs" />
+    <Compile Remove="Models\COURSE.cs" />
+    <Compile Remove="Models\COURSEEMPLOYEE.cs" />
+    <Compile Remove="Models\COURSETRAINING.cs" />
+    <Compile Remove="Models\COURSETYPE.cs" />
+    <Compile Remove="Models\CRIMINAL.cs" />
+    <Compile Remove="Models\CRIMINALMASTER.cs" />
+    <Compile Remove="Models\CURRENCY.cs" />
+    <Compile Remove="Models\DASHBOARDEXTEND.cs" />
+    <Compile Remove="Models\DataEventLog.cs" />
+    <Compile Remove="Models\DataLogFile.cs" />
+    <Compile Remove="Models\DataLogImport.cs" />
+    <Compile Remove="Models\DEGREE.cs" />
+    <Compile Remove="Models\DEPARTMENT.cs" />
+    <Compile Remove="Models\DEPARTMENTCHANG.cs" />
+    <Compile Remove="Models\DEPARTMENTGROUP.cs" />
+    <Compile Remove="Models\DEPARTMENTGROUPDETAIL.cs" />
+    <Compile Remove="Models\DISTRICT.cs" />
+    <Compile Remove="Models\DIVISION.cs" />
+    <Compile Remove="Models\DOCUMENT.cs" />
+    <Compile Remove="Models\DRIVER.cs" />
+    <Compile Remove="Models\DRIVERTYPE.cs" />
+    <Compile Remove="Models\EDITEMPLOYEEADDRESS.cs" />
+    <Compile Remove="Models\EDITEMPLOYEEINFORMATION.cs" />
+    <Compile Remove="Models\EDUCATION.cs" />
+    <Compile Remove="Models\EDUCATIONALINSTITUTION.cs" />
+    <Compile Remove="Models\EDUCATIONBRANCH.cs" />
+    <Compile Remove="Models\EDUCATIONLEVEL.cs" />
+    <Compile Remove="Models\EEVALUATEASSIGN.cs" />
+    <Compile Remove="Models\EEVALUATEASSIGNDETAIL.cs" />
+    <Compile Remove="Models\EEVALUATECOMMENT.cs" />
+    <Compile Remove="Models\EEVALUATEFLOWHISTORY.cs" />
+    <Compile Remove="Models\EEVALUATELEVEL.cs" />
+    <Compile Remove="Models\EEVALUATELEVELDETAIL.cs" />
+    <Compile Remove="Models\EEVALUATEMASTERFORM.cs" />
+    <Compile Remove="Models\EEVALUATEMASTERFORMDETAIL.cs" />
+    <Compile Remove="Models\EEVALUATEPERIOD.cs" />
+    <Compile Remove="Models\EEVALUATEPLAN.cs" />
+    <Compile Remove="Models\EEVALUATEPLANDETAIL.cs" />
+    <Compile Remove="Models\EEVALUATEPLANWORKFLOW.cs" />
+    <Compile Remove="Models\EEVALUATERESULT.cs" />
+    <Compile Remove="Models\EEVALUATERESULTDETAIL.cs" />
+    <Compile Remove="Models\EEVALUATESUBJECT.cs" />
+    <Compile Remove="Models\ELEANINGDETAIL.cs" />
+    <Compile Remove="Models\ELEANINGMASTER.cs" />
+    <Compile Remove="Models\EMAILSETUP.cs" />
+    <Compile Remove="Models\EMAILSETUPLN.cs" />
+    <Compile Remove="Models\EMPLOYEE.cs" />
+    <Compile Remove="Models\EMPLOYEEACARD.cs" />
+    <Compile Remove="Models\EMPLOYEEADDRESS.cs" />
+    <Compile Remove="Models\EMPLOYEEADDRESSREFERENCE.cs" />
+    <Compile Remove="Models\EMPLOYEEAPPROVE.cs" />
+    <Compile Remove="Models\EMPLOYEEATK.cs" />
+    <Compile Remove="Models\EMPLOYEEBENEFICIARY.cs" />
+    <Compile Remove="Models\EMPLOYEEBONU.cs" />
+    <Compile Remove="Models\EMPLOYEEBRANCH.cs" />
+    <Compile Remove="Models\EMPLOYEEBUSINESSLINE.cs" />
+    <Compile Remove="Models\EMPLOYEECAREERPATH.cs" />
+    <Compile Remove="Models\EMPLOYEECOMPANYGROUP.cs" />
+    <Compile Remove="Models\EMPLOYEECOSTPATH.cs" />
+    <Compile Remove="Models\EMPLOYEEDEPARTMENT.cs" />
+    <Compile Remove="Models\EMPLOYEEDEPARTMENTGROUP.cs" />
+    <Compile Remove="Models\EMPLOYEEDIVISION.cs" />
+    <Compile Remove="Models\EMPLOYEEDOCUMENT.cs" />
+    <Compile Remove="Models\EMPLOYEEEDUCATION.cs" />
+    <Compile Remove="Models\EMPLOYEEEVALUATELEVEL.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.19">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.19">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+</Project>

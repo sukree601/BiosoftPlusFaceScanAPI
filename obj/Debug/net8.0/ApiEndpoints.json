@@ -1,0 +1,59 @@
+[
+  {
+    "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.Attendance",
+    "Method": "FaceScan",
+    "RelativePath": "api/attendance/face-scan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payload",
+        "Type": "System.Text.Json.JsonElement",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.Attendance",
+    "Method": "GetTimeFaceAI",
+    "RelativePath": "api/attendance/gettime",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.Attendance",
+    "Method": "Record",
+    "RelativePath": "api/attendance/record",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BiosoftPlusFaceScanAPI.WeatherForecast, BiosoftPlusFaceScanAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

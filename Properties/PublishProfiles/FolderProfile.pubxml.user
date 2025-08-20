@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Azure\BiosoftPlusFaceScanAPI\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-08-18T09:17:55.0682334Z||;True|2025-08-18T15:57:25.6359699+07:00||;True|2025-08-18T15:33:52.1145296+07:00||;True|2025-08-18T15:31:17.8764867+07:00||;True|2025-08-18T14:31:54.2680680+07:00||;True|2025-08-18T14:24:52.0946537+07:00||;True|2025-08-18T13:27:37.8734619+07:00||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Default">
+      <Value>Server=192.168.50.3\DEV_REPORT%3bDatabase=BiosoftPlus_STD%3bUser Id=sa%3bpassword=Pa%24%24w0rd%40min%3bTrustServerCertificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
