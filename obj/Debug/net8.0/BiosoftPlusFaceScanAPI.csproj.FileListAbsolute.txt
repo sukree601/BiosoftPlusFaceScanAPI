@@ -145,3 +145,5 @@ E:\Azure\BiosoftPlusFaceScanAPI\obj\Debug\net8.0\BiosoftPlusFaceScanAPI.pdb
 E:\Azure\BiosoftPlusFaceScanAPI\obj\Debug\net8.0\BiosoftPlusFaceScanAPI.genruntimeconfig.cache
 E:\Azure\BiosoftPlusFaceScanAPI\obj\Debug\net8.0\ref\BiosoftPlusFaceScanAPI.dll
 E:\Azure\BiosoftPlusFaceScanAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\Azure\BiosoftPlusFaceScanAPI\obj\Debug\net8.0\BiosoftPlusFaceScanAPI.sourcelink.json
+E:\Azure\BiosoftPlusFaceScanAPI\bin\Debug\net8.0\efpt.config.json
