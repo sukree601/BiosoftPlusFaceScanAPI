@@ -1,19 +1,22 @@
 ﻿
 using BiosoftPlusFaceScanAPI.Models;
+using BiosoftPlusFaceScanAPI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-//// ✅ Add TCP BackgroundService
-//builder.Services.AddHostedService<TcpServerService>();
-//builder.Services.AddHttpClient(); // สำหรับส่ง HTTP POST
-
+ 
 // Add services to the container.
 builder.Services.AddSingleton<DeviceMonitor>();
 builder.Services.AddHostedService<MonitorPrinter>();
 builder.Services.AddControllers();
+builder.Services.AddScoped<IAttendanceService, AttendanceService>();
+
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.SetMinimumLevel(LogLevel.Warning); // โชว์เฉพาะ Warning ขึ้นไป
+
 
 // ลงทะเบียน DbContext
 builder.Services.AddDbContext<AppDb>(options =>
@@ -32,27 +35,15 @@ app.UseStaticFiles(new StaticFileOptions()
     FileProvider = new PhysicalFileProvider(
         Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot"))
 });
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-
-
-//app.MapPost("/device/reg", async (HttpRequest req) =>
+//// Configure the HTTP request pipeline.
+//if (app.Environment.IsDevelopment())
 //{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
 
-//    using var reader = new StreamReader(req.Body);
-//    var body = await reader.ReadToEndAsync();
 
-//    Console.WriteLine("Received Data:");
-//    Console.WriteLine(body);
-
-//    // TODO: คุณสามารถ Deserialize JSON, บันทึกลง DB, ตรวจสอบ SN, ฯลฯ
-//    return Results.Ok(new { status = "received" });
-//});
+ 
 
 
 //app.UseHttpsRedirection();
