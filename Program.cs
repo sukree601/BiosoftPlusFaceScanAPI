@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddHttpClient(); // สำหรับส่ง HTTP POST
 
 // Add services to the container.
-
+builder.Services.AddSingleton<DeviceMonitor>();
+builder.Services.AddHostedService<MonitorPrinter>();
 builder.Services.AddControllers();
 
 // ลงทะเบียน DbContext
@@ -54,7 +55,7 @@ if (app.Environment.IsDevelopment())
 //});
 
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

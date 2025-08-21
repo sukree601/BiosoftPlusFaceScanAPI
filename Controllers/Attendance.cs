@@ -11,15 +11,16 @@ using Microsoft.Extensions.Hosting;
 
 namespace BiosoftPlusFaceScanAPI.Controllers
 {
-    [Route("api/attendance")]
+    [Route("")]
     [ApiController]
     public class Attendance : ControllerBase
     {
         private readonly AppDb _db;
-
-        public Attendance(AppDb db)
+        private readonly DeviceMonitor _monitor;
+        public Attendance(AppDb db, DeviceMonitor monitor)
         {
             _db = db;
+            _monitor = monitor;
         }
 
         private static readonly JsonSerializerOptions JsonOpts = new()
@@ -27,28 +28,15 @@ namespace BiosoftPlusFaceScanAPI.Controllers
             PropertyNameCaseInsensitive = true
         };
 
-        [HttpGet("gettime")]
-        public async Task<IActionResult> GetTimeFaceAI()
-        {
-           var list =await _db.Tempimports.Where(w => w.SourceType == "FaceAI").ToListAsync();
+        // ✅ Health check (GET /)
+        [HttpGet("")]
+        public IActionResult Health() => Ok(new { status = "ok" });
 
-            return Ok(list);
-        }
 
-        [HttpPost("record")]
-        public async Task<IActionResult> Record()
-        {
 
-            using var reader = new StreamReader(Request.Body);
-
-            var rawData = await reader.ReadToEndAsync();
-            Console.WriteLine($"----------------------------------------------------------------------------------");
-            Console.WriteLine($"📨 Raw: {rawData}");
-
-            return Ok();
-        }
-
-        [HttpPost("face-scan")]
+        [HttpPost("")]
+        [HttpPost("face")]
+        //[Consumes("application/json")]
         public async Task<IActionResult> FaceScan([FromBody] JsonElement payload)
         {
 
@@ -188,15 +176,14 @@ namespace BiosoftPlusFaceScanAPI.Controllers
 
                     try
                     {
+                        string remoteIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "-";
+                        // อัปเดตสถานะลง Monitor
+                        var sn = r.Sn ?? "UNKNOWN";
+                        _monitor.Update(sn, "checklive", remoteIp);
+
                         var chk_live = await _db.Facescanregisters.Where(w => w.Sn == r.Sn).FirstOrDefaultAsync();
-                        if (chk_live != null)
+                        if (chk_live == null)
                         {
-                            chk_live.Live = true;
-                            chk_live.Time = DateTime.Now;
-                            chk_live.Status = "checklive";
-                            await _db.SaveChangesAsync();
-                        }
-                        else {
                             var row = new Facescanregister
                             {
                                 Sn = r.Sn,
@@ -207,8 +194,8 @@ namespace BiosoftPlusFaceScanAPI.Controllers
 
                             _db.Set<Facescanregister>().Add(row);
                             await _db.SaveChangesAsync();
-
                         }
+                        
                         
                     }
                     catch
@@ -236,30 +223,15 @@ namespace BiosoftPlusFaceScanAPI.Controllers
 
             //-----------------------------------------------------------------------------------
 
-            using var reader = new StreamReader(Request.Body);
+            //using var reader = new StreamReader(Request.Body);
 
-            var rawData = await reader.ReadToEndAsync();
-            Console.WriteLine($"----------------------------------------------------------------------------------");
-            Console.WriteLine($"📨 Raw: {raw}");
+            //var rawData = await reader.ReadToEndAsync();
+            //Console.WriteLine($"----------------------------------------------------------------------------------");
+            //Console.WriteLine($"📨 Raw: {raw}");
 
             return Ok();
 
-            //var Succes = new
-            //{
-            //    ret = "reg",
-            //    result = true,
-            //    cloudtime = DateTime.Now,
-            //    nosenduser = true
-            //};
-
-
-            //var Succes = new
-            //{
-            //    cmd = "getnewlog",
-            //    stn = true
-
-            //};
-            //return Ok(Succes); 
+            
         }
    
     }

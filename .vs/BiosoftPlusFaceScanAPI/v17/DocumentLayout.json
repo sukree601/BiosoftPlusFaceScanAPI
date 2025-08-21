@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "E:\\Azure\\BiosoftPlusFaceScanAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\controllers\\monitorprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:controllers\\monitorprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\controllers\\devicemonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:controllers\\devicemonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\controllers\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:controllers\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\controllers\\heartbeatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:controllers\\heartbeatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\models\\tempimport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\models\\logenvelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:models\\logenvelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,24 +54,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HeartbeatService.cs",
-              "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\HeartbeatService.cs",
-              "RelativeDocumentMoniker": "Controllers\\HeartbeatService.cs",
-              "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\HeartbeatService.cs",
-              "RelativeToolTip": "Controllers\\HeartbeatService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MonitorPrinter.cs",
+              "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\MonitorPrinter.cs",
+              "RelativeDocumentMoniker": "Controllers\\MonitorPrinter.cs",
+              "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\MonitorPrinter.cs",
+              "RelativeToolTip": "Controllers\\MonitorPrinter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T10:30:11.011Z",
+              "WhenOpened": "2025-08-21T02:58:09.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "DeviceMonitor.cs",
+              "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\DeviceMonitor.cs",
+              "RelativeDocumentMoniker": "Controllers\\DeviceMonitor.cs",
+              "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\DeviceMonitor.cs",
+              "RelativeToolTip": "Controllers\\DeviceMonitor.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T02:57:50.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Tempimport.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Models\\Tempimport.cs",
               "RelativeDocumentMoniker": "Models\\Tempimport.cs",
@@ -79,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AppDb.dgml [Viewer]",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\AppDb.dgml",
               "RelativeDocumentMoniker": "AppDb.dgml",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "TempContext.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Models\\TempContext.cs",
               "RelativeDocumentMoniker": "Models\\TempContext.cs",
@@ -103,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AppDb.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Models\\AppDb.cs",
               "RelativeDocumentMoniker": "Models\\AppDb.cs",
@@ -115,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -127,44 +144,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T06:49:37.967Z"
+              "WhenOpened": "2025-08-20T06:49:37.967Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Attendance.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\Attendance.cs",
               "RelativeDocumentMoniker": "Controllers\\Attendance.cs",
               "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\Attendance.cs",
               "RelativeToolTip": "Controllers\\Attendance.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAuwDwAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAlwM8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T06:48:15.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "README.md",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-08-20T06:45:50.875Z"
+              "WhenOpened": "2025-08-20T06:45:50.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "LogEnvelope.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Models\\LogEnvelope.cs",
               "RelativeDocumentMoniker": "Models\\LogEnvelope.cs",

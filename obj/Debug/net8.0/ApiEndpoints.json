@@ -1,8 +1,18 @@
 [
   {
     "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.Attendance",
+    "Method": "Health",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.Attendance",
     "Method": "FaceScan",
-    "RelativePath": "api/attendance/face-scan",
+    "RelativePath": "",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -17,22 +27,18 @@
   },
   {
     "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.Attendance",
-    "Method": "GetTimeFaceAI",
-    "RelativePath": "api/attendance/gettime",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BiosoftPlusFaceScanAPI.Controllers.Attendance",
-    "Method": "Record",
-    "RelativePath": "api/attendance/record",
+    "Method": "FaceScan",
+    "RelativePath": "face",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "payload",
+        "Type": "System.Text.Json.JsonElement",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

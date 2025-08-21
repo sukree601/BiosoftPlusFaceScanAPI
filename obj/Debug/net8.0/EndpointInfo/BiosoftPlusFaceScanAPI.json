@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/attendance/gettime": {
+    "/": {
       "get": {
         "tags": [
           "Attendance"
@@ -15,13 +15,24 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/attendance/record": {
+      },
       "post": {
         "tags": [
           "Attendance"
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -29,7 +40,7 @@
         }
       }
     },
-    "/api/attendance/face-scan": {
+    "/face": {
       "post": {
         "tags": [
           "Attendance"
