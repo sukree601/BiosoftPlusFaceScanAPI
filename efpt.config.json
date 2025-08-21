@@ -1,6 +1,6 @@
 ﻿{
    "CodeGenerationMode": 4,
-   "ContextClassName": "TempContext",
+   "ContextClassName": "AppDb",
    "ContextNamespace": null,
    "FilterSchemas": false,
    "IncludeConnectionString": false,
@@ -18,6 +18,14 @@
       {
          "Name": "[dbo].[FACESCANREGISTER]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TEMPIMPORT]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EmployeeScanTimeVIEW]",
+         "ObjectType": 3
       }
    ],
    "UiHint": null,

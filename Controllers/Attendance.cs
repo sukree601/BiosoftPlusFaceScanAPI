@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using System.Text.Json;
-using BiosoftPlusFaceScanAPI.Data;
+using System.Text.Json; 
 using BiosoftPlusFaceScanAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +30,7 @@ namespace BiosoftPlusFaceScanAPI.Controllers
         [HttpGet("gettime")]
         public async Task<IActionResult> GetTimeFaceAI()
         {
-           var list =await _db.TEMPIMPORTs.Where(w => w.SourceType == "FaceAI").ToListAsync();
+           var list =await _db.Tempimports.Where(w => w.SourceType == "FaceAI").ToListAsync();
 
             return Ok(list);
         }
@@ -55,7 +54,6 @@ namespace BiosoftPlusFaceScanAPI.Controllers
 
             var raw = payload.GetRawText();
 
-            // 1) ลองเป็น getnewlog
             try
             {
                 //var a = JsonSerializer.Deserialize<CmiGetNewLogEnvelope>(raw, JsonOpts);
@@ -73,7 +71,7 @@ namespace BiosoftPlusFaceScanAPI.Controllers
                         foreach (var r in a.Record)
                         {
                             string EnrollId = r.EnrollId.ToString();
-                            var emp = _db.EmployeeScanTimeVIEW
+                            var emp = _db.EmployeeScanTimeViews
                             .Where(e => e.Employee2 == EnrollId)
                             .AsNoTracking()
                             .FirstOrDefault();
@@ -92,23 +90,23 @@ namespace BiosoftPlusFaceScanAPI.Controllers
                             // เอาเฉพาะชั่วโมง:นาที
                             string timeOnly = dt.ToString("HH:mm");
 
-                            int temp = _db.TEMPIMPORTs.Where(w => w.Employee == emp.Code && w.dt.Day == dt.Day
-                            && w.dt.Month == dt.Month
-                            && w.dt.Year == dt.Year
+                            int temp = _db.Tempimports.Where(w => w.Employee == emp.Code && w.Dt.Day == dt.Day
+                            && w.Dt.Month == dt.Month
+                            && w.Dt.Year == dt.Year
                             && w.Times == timeOnly).Count();
 
                             if (temp == 0)
                             {
 
-                                var row = new TEMPIMPORT
+                                var row = new Tempimport
                                 {
                                     // ปรับชื่อพร็อพให้ตรงกับ entity จริงของคุณ
                                     Employee = emp.Code,
-                                    dt = dt,
+                                    Dt = dt,
                                     Times = timeOnly,
                                     Hrs = hr,
                                     Mins = min,
-                                    COMID = emp.COMID,
+                                    Comid = emp.Comid,
                                     CreateDate = dt,
                                     SourceType = "FaceAI"
 
@@ -116,25 +114,24 @@ namespace BiosoftPlusFaceScanAPI.Controllers
                                 };
 
 
-                                _db.Set<TEMPIMPORT>().Add(row);
+                                _db.Set<Tempimport>().Add(row);
                                 await _db.SaveChangesAsync();
                             }
 
 
                             //var re = r;
                             Console.WriteLine($"----------------------------------------------------------------------------------");
-                            Console.WriteLine($"📨 Raw: {r.ToString()}");
+                            Console.WriteLine($"📨 Record: {r.ToString()}");
                         }
                     }
 
 
-                    var Succes = new
+
+                    return Ok(new
                     {
                         cmd = "getnewlog",
                         stn = true
-
-                    };
-                    return Ok(Succes);
+                    });
                 }
             }
             catch { /* ลองแบบอื่นต่อ */ }
@@ -148,12 +145,86 @@ namespace BiosoftPlusFaceScanAPI.Controllers
                 if (r?.Cmd?.Equals("reg", StringComparison.OrdinalIgnoreCase) == true && r.DevInfo != null)
                 {
 
+                    try
+                    {
+
+                        var chk_reg = await _db.Facescanregisters.Where(w => w.Sn == r.Sn).FirstOrDefaultAsync();
+                        if (chk_reg == null)
+                        {
+                            var row = new Facescanregister
+                            {
+                                Sn = r.Sn,
+                                Time = DateTime.Now,
+                                Live = true,
+                                Status = "reg"
+
+                            };
+
+                            _db.Set<Facescanregister>().Add(row);
+                            await _db.SaveChangesAsync();
+                        }
+                       
+                    }
+                    catch {
+
+                        return BadRequest();
+                    }
+                 
+                    Console.WriteLine($"----------------------------------------------------------------------------------");
+                    Console.WriteLine($"📨 reg : {raw}");
+
                     return Ok(new
                     {
                         ret = "reg",
                         result = true,
                         cloudtime = DateTime.Now,
                         nosenduser = true
+                    });
+
+                }
+
+                if (r?.Cmd?.Equals("checklive", StringComparison.OrdinalIgnoreCase) == true )
+                {
+
+                    try
+                    {
+                        var chk_live = await _db.Facescanregisters.Where(w => w.Sn == r.Sn).FirstOrDefaultAsync();
+                        if (chk_live != null)
+                        {
+                            chk_live.Live = true;
+                            chk_live.Time = DateTime.Now;
+                            chk_live.Status = "checklive";
+                            await _db.SaveChangesAsync();
+                        }
+                        else {
+                            var row = new Facescanregister
+                            {
+                                Sn = r.Sn,
+                                Time = DateTime.Now,
+                                Live = true,
+                                Status = "reg"
+                            };
+
+                            _db.Set<Facescanregister>().Add(row);
+                            await _db.SaveChangesAsync();
+
+                        }
+                        
+                    }
+                    catch
+                    {
+
+                        return BadRequest();
+                    }
+
+                    Console.WriteLine($"----------------------------------------------------------------------------------");
+                    Console.WriteLine($"📨 checklive : {raw}");
+
+                  
+                    return Ok(new
+                    {
+                        ret= "checklive",
+                        result= true
                     });
                 }
             }
@@ -169,7 +240,7 @@ namespace BiosoftPlusFaceScanAPI.Controllers
 
             var rawData = await reader.ReadToEndAsync();
             Console.WriteLine($"----------------------------------------------------------------------------------");
-             Console.WriteLine($"📨 Raw: {rawData}");
+            Console.WriteLine($"📨 Raw: {raw}");
 
             return Ok();
 

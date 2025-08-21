@@ -1,4 +1,5 @@
-﻿using BiosoftPlusFaceScanAPI.Data;
+﻿
+using BiosoftPlusFaceScanAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 
@@ -20,6 +21,8 @@ builder.Services.AddDbContext<AppDb>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.WebHost.UseUrls("http://0.0.0.0:1400");
 
 var app = builder.Build();
 app.UseDefaultFiles();
