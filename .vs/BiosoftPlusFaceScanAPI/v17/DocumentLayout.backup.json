@@ -7,16 +7,24 @@
       "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:infra\\monitorprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\models\\appdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:models\\appdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\biosoftplusfacescanapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:biosoftplusfacescanapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\controllers\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:controllers\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\services\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:services\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3175480B-012E-4C57-ABDA-F2D255AD9EFB}|BiosoftPlusFaceScanAPI.csproj|e:\\azure\\biosoftplusfacescanapi\\models\\tempimport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +46,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "AppDb.cs",
+              "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Models\\AppDb.cs",
+              "RelativeDocumentMoniker": "Models\\AppDb.cs",
+              "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Models\\AppDb.cs",
+              "RelativeToolTip": "Models\\AppDb.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAcwJAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T03:48:00.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BiosoftPlusFaceScanAPI.csproj",
+              "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\BiosoftPlusFaceScanAPI.csproj",
+              "RelativeDocumentMoniker": "BiosoftPlusFaceScanAPI.csproj",
+              "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\BiosoftPlusFaceScanAPI.csproj",
+              "RelativeToolTip": "BiosoftPlusFaceScanAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-21T03:46:30.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Tempimport.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Models\\Tempimport.cs",
               "RelativeDocumentMoniker": "Models\\Tempimport.cs",
@@ -50,12 +82,11 @@
               "RelativeToolTip": "Models\\Tempimport.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T03:24:17.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T03:24:17.639Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "IAttendanceService.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Services\\IAttendanceService.cs",
               "RelativeDocumentMoniker": "Services\\IAttendanceService.cs",
@@ -63,25 +94,24 @@
               "RelativeToolTip": "Services\\IAttendanceService.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAwwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T03:20:46.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T03:20:46.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-21T03:21:44.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ResponseFactory.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Infra\\ResponseFactory.cs",
               "RelativeDocumentMoniker": "Infra\\ResponseFactory.cs",
@@ -89,8 +119,7 @@
               "RelativeToolTip": "Infra\\ResponseFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T03:21:42.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T03:21:42.398Z"
             },
             {
               "$type": "Document",
@@ -100,14 +129,14 @@
               "RelativeDocumentMoniker": "Infra\\MonitorPrinter.cs",
               "ToolTip": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Infra\\MonitorPrinter.cs",
               "RelativeToolTip": "Infra\\MonitorPrinter.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAlwBUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-21T03:21:38.54Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "DeviceMonitor.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Infra\\DeviceMonitor.cs",
               "RelativeDocumentMoniker": "Infra\\DeviceMonitor.cs",
@@ -115,12 +144,11 @@
               "RelativeToolTip": "Infra\\DeviceMonitor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T03:19:36.079Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T03:19:36.079Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Attendance.cs",
               "DocumentMoniker": "E:\\Azure\\BiosoftPlusFaceScanAPI\\Controllers\\Attendance.cs",
               "RelativeDocumentMoniker": "Controllers\\Attendance.cs",
@@ -128,8 +156,7 @@
               "RelativeToolTip": "Controllers\\Attendance.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAswDMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-21T03:19:18.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-21T03:19:18.22Z"
             }
           ]
         }

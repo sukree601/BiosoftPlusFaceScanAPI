@@ -6,9 +6,9 @@ public class MonitorPrinter : BackgroundService
     private readonly TimeSpan _interval = TimeSpan.FromSeconds(3);
 
     // ANSI escape code สำหรับสี
-    private const string Reset = "\u001b[0m";
-    private const string Green = "\u001b[32m";
-    private const string Red = "\u001b[31m";
+    //private const string Reset = "\u001b[0m";
+    //private const string Green = "\u001b[32m";
+    //private const string Red = "\u001b[31m";
 
     public MonitorPrinter(DeviceMonitor monitor) => _monitor = monitor;
 
@@ -27,7 +27,7 @@ public class MonitorPrinter : BackgroundService
             foreach (var (status, _, age) in _monitor.Snapshot())
             {
                 bool isOnline = age.TotalSeconds <= 20; // ✅ 20 วิ
-                string label = isOnline ? $"{Green}ONLINE{Reset}" : $"{Red}OFFLINE{Reset}";
+                string label = isOnline ? $"ONLINE" : $"OFFLINE";
                 string ageStr = $"{(int)age.TotalSeconds,3}s";
 
                 Console.WriteLine(
