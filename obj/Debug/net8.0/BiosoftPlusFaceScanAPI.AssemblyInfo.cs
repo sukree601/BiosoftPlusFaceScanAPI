@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BiosoftPlusFaceScanAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0f3c18f522cdf76fd9793a827edc885e03c8d93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b818f6f6861ea3ee92f9bcf7553f650c1b5e134")]
 [assembly: System.Reflection.AssemblyProductAttribute("BiosoftPlusFaceScanAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BiosoftPlusFaceScanAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
