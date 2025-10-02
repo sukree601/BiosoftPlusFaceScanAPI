@@ -1,8 +1,12 @@
 ﻿using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using BiosoftPlusFaceScanAPI.Models;
 
 public class MonitorPrinter : BackgroundService
 {
     private readonly DeviceMonitor _monitor;
+    private readonly IServiceProvider _serviceProvider;
     private readonly TimeSpan _interval = TimeSpan.FromSeconds(3);
 
     // ANSI escape code สำหรับสี
@@ -10,7 +14,11 @@ public class MonitorPrinter : BackgroundService
     //private const string Green = "\u001b[32m";
     //private const string Red = "\u001b[31m";
 
-    public MonitorPrinter(DeviceMonitor monitor) => _monitor = monitor;
+    public MonitorPrinter(DeviceMonitor monitor, IServiceProvider serviceProvider) 
+    {
+        _monitor = monitor;
+        _serviceProvider = serviceProvider;
+    }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -19,6 +27,10 @@ public class MonitorPrinter : BackgroundService
             Console.Clear();
             Console.WriteLine("Face/FP Devices - Checklive Monitor");
             Console.WriteLine($"Updated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+            
+            // แสดงจำนวนรายการจาก TEMPIMPORT table
+            await DisplayTempImportCount();
+            
             Console.WriteLine(new string('-', 100));
             Console.WriteLine(
                 $"{"SN",-16} {"STATUS",-12} {"LAST CMD",-10} {"AGE",-10} {"LAST SEEN",-20} {"IP",-15}");
@@ -38,6 +50,32 @@ public class MonitorPrinter : BackgroundService
             Console.WriteLine(new string('-', 100));
             Console.WriteLine("Note: ONLINE = <= 20s, OFFLINE = > 20s");
             await Task.Delay(_interval, stoppingToken);
+        }
+    }
+
+    private async Task DisplayTempImportCount()
+    {
+        try
+        {
+            using var scope = _serviceProvider.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<AppDb>();
+            
+            var today = DateTime.Now.Date;
+            var todayEnd = today.AddDays(1);
+            
+            var count = await dbContext.Tempimports
+                .AsNoTracking()
+                .CountAsync(t => t.Dt >= today 
+                              && t.Dt < todayEnd 
+                              && t.SourceType == "FaceAI");
+            
+            Console.WriteLine($"TEMPIMPORT Records Today (FaceAI): {count:N0} records");
+            Console.WriteLine();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error getting TEMPIMPORT count: {ex.Message}");
+            Console.WriteLine();
         }
     }
 }
