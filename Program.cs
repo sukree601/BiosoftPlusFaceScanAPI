@@ -13,6 +13,14 @@ if (!ValidateStartupPassword())
     Environment.Exit(1);
 }
 
+// อ่านการตั้งค่า Server จาก appsettings.json
+var serverHost = builder.Configuration.GetValue<string>("ServerSettings:Host") ?? "localhost";
+var serverPort = builder.Configuration.GetValue<int>("ServerSettings:Port", 5000);
+var serverUrl = $"http://{serverHost}:{serverPort}";
+
+// ตั้งค่า URL สำหรับ WebHost
+builder.WebHost.UseUrls(serverUrl);
+
 // Add services to the container.
 builder.Services.AddSingleton<DeviceMonitor>();
 // เปิดการทำงานของ MonitorPrinter เพื่อแสดง device monitoring table
@@ -36,8 +44,6 @@ builder.Services.AddDbContext<AppDb>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.WebHost.UseUrls("http://0.0.0.0:7005");
-
 var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles(new StaticFileOptions()
@@ -58,7 +64,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-Console.WriteLine("🚀 ระบบเริ่มทำงานแล้ว - Biosoft Plus Face Scan API พร้อมใช้งาน!");
+Console.WriteLine($"🚀 ระบบเริ่มทำงานแล้ว - Biosoft Plus Face Scan API พร้อมใช้งาน!");
+Console.WriteLine($"🌐 Server กำลังรันที่: {serverUrl}");
 app.Run();
 
 // ฟังก์ชันสำหรับตรวจสอบ password

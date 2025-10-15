@@ -1,12 +1,14 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using BiosoftPlusFaceScanAPI.Models;
 
 public class MonitorPrinter : BackgroundService
 {
     private readonly DeviceMonitor _monitor;
     private readonly IServiceProvider _serviceProvider;
+    private readonly IConfiguration _configuration;
     private readonly TimeSpan _interval = TimeSpan.FromSeconds(3);
 
     // ANSI escape code สำหรับสี
@@ -14,10 +16,11 @@ public class MonitorPrinter : BackgroundService
     //private const string Green = "\u001b[32m";
     //private const string Red = "\u001b[31m";
 
-    public MonitorPrinter(DeviceMonitor monitor, IServiceProvider serviceProvider) 
+    public MonitorPrinter(DeviceMonitor monitor, IServiceProvider serviceProvider, IConfiguration configuration) 
     {
         _monitor = monitor;
         _serviceProvider = serviceProvider;
+        _configuration = configuration;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -49,6 +52,10 @@ public class MonitorPrinter : BackgroundService
 
             Console.WriteLine(new string('-', 100));
             Console.WriteLine("Note: ONLINE = <= 20s, OFFLINE = > 20s");
+            
+            // แสดงสถานะ server port ที่กำลังรันอยู่
+            DisplayServerStatus();
+            
             await Task.Delay(_interval, stoppingToken);
         }
     }
@@ -76,6 +83,23 @@ public class MonitorPrinter : BackgroundService
         {
             Console.WriteLine($"Error getting TEMPIMPORT count: {ex.Message}");
             Console.WriteLine();
+        }
+    }
+
+    private void DisplayServerStatus()
+    {
+        try
+        {
+            var serverHost = _configuration.GetValue<string>("ServerSettings:Host") ?? "localhost";
+            var serverPort = _configuration.GetValue<int>("ServerSettings:Port", 5000);
+            var serverUrl = $"http://{serverHost}:{serverPort}";
+            
+            Console.WriteLine();
+            Console.WriteLine($"🌐 Server Status: Running on {serverUrl} | {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"🌐 Server Status: Running (Config Error: {ex.Message})");
         }
     }
 }

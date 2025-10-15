@@ -45,6 +45,9 @@ public class AttendanceController : ControllerBase
         if (string.IsNullOrWhiteSpace(cmd))
             return BadRequest(ResponseFactory.BadCmd(null));
 
+        // เก็บข้อมูล cmd ลงไฟล์ txt
+        await LogCmdToFileAsync(cmd, raw);
+
         try
         {
             switch (cmd.ToLowerInvariant())
@@ -76,6 +79,44 @@ public class AttendanceController : ControllerBase
         {
             _logger.LogError(ex, "Error handling cmd {cmd}", cmd);
             return StatusCode(500, new { result = false, error = "server_error" });
+        }
+    }
+
+    private async Task LogCmdToFileAsync(string cmd, string rawPayload)
+    {
+        try
+        {
+            // สร้างโฟลเดอร์ logs ถ้ายังไม่มี
+            var logsDirectory = Path.Combine(Directory.GetCurrentDirectory(), "logs");
+            if (!Directory.Exists(logsDirectory))
+            {
+                Directory.CreateDirectory(logsDirectory);
+            }
+
+            // สร้างชื่อไฟล์ตามวันที่
+            var fileName = $"cmd_log_{DateTime.Now:yyyy-MM-dd}.txt";
+            var filePath = Path.Combine(logsDirectory, fileName);
+
+            // เตรียมข้อมูลที่จะเก็บ
+            var logEntry = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] CMD: {cmd} | IP: {HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown"}" + Environment.NewLine;
+            
+            // เก็บเฉพาะ cmd สำคัญ หรือเก็บทั้งหมดตามต้องการ
+            if (cmd.ToLowerInvariant() == "sendlog")
+            {
+                // สำหรับ sendlog เก็บข้อมูล payload ด้วย (อาจจะตัดให้สั้นลง)
+                var shortPayload = rawPayload.Length > 500 ? rawPayload.Substring(0, 500) + "..." : rawPayload;
+                logEntry += $"    Payload: {shortPayload}" + Environment.NewLine;
+            }
+            
+            logEntry += new string('-', 80) + Environment.NewLine;
+
+            // เขียนลงไฟล์แบบ async โดยใช้ System.IO.File
+            await System.IO.File.AppendAllTextAsync(filePath, logEntry);
+        }
+        catch (Exception ex)
+        {
+            // หากเกิดข้อผิดพลาดในการเขียนไฟล์ ให้ log ไว้แต่ไม่ให้ระบบหยุดทำงาน
+            _logger.LogWarning(ex, "Failed to write cmd log to file");
         }
     }
 }
